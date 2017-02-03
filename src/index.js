@@ -13,32 +13,29 @@ class App extends Component {
         super(props);
 
         this.state = {
-            videos: []
+            videos: [],
+            selectedVideo: null
         }
-        this.sRender = false;
     }
 
     componentWillMount() {
         YTSearch({key: API_KEY, term: 'le-sang'}, (videos) => {
             if (videos.length >= 5) {
-                this.sRender = true;
                 this.setState({
-                    videos
+                    videos: videos,
+                    selectedVideo: videos[0]
                 });
             }
         });
-    }
-
-    shouldComponentUpdate() {
-        return this.sRender;
     }
 
     render() {
         return (
             <div className="container">
                 <SearchBar />
-                <VideoDetail video={this.state.videos[0]}/>
-                <VideoList videos={this.state.videos}/>
+                <VideoDetail video={this.state.selectedVideo}/>
+                <VideoList onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                           videos={this.state.videos}/>
             </div>
         );
     }

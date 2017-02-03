@@ -16,14 +16,15 @@ class VideoListItem extends Component {
     }
 
     render() {
+        const {video, onVideoSelect} = this.props;
         return(
-            <li className="list-group-item videoListItem">
+            <li onClick={() => onVideoSelect(video)} className="list-group-item videoListItem">
                 <div className="video-list">
                     <div className="media-left">
                         <img src={this.state.imageUrl} alt="" className="media-obj"/>
                     </div>
                     <div className="media-body">
-                        <div className="media-heading">{this.props.video.snippet.title}</div>
+                        <div className="media-heading">{video.snippet.title}</div>
                     </div>
                 </div>
             </li>

@@ -1,0 +1,31 @@
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 5;
+}
+.videoDetail {
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.loading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color:#fff;
+}
+.embedBox {
+    position: relative;
+    margin-bottom: 20px;
+}

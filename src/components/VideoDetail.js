@@ -9,10 +9,12 @@ class VideoDetail extends Component {
     }
 
     render() {
-        if(!this.props.video) {
+        if (!this.props.video) {
             return (
-                <div>
-                    Loading...
+                <div className="embed-responsive-16by9 embedBox">
+                    <div className="loading">
+                        <span>Loading...</span>
+                    </div>
                 </div>
             );
         }
@@ -20,12 +22,15 @@ class VideoDetail extends Component {
             const vidId = this.props.video.id.videoId;
             const vidUrl = `https://www.youtube.com/embed/${vidId}`;
             return (
-                <div className="videoDetail">
-                    <div className="embed-responsive embed-responsive-16by9">
-                        <iframe className="embed-responsive-item" src={vidUrl}></iframe>
-                    </div>
-                    <div className="details">
-
+                <div>
+                    <div className="videoDetail">
+                        <div className="embed-responsive embed-responsive-16by9">
+                            <iframe className="embed-responsive-item" src={vidUrl}></iframe>
+                        </div>
+                        <div className="details">
+                            <div>{this.props.video.snippet.title}</div>
+                            <div>{this.props.video.snippet.description}</div>
+                        </div>
                     </div>
                 </div>
             );
