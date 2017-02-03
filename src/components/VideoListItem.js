@@ -23,7 +23,7 @@ class VideoListItem extends Component {
                         <img src={this.state.imageUrl} alt="" className="media-obj"/>
                     </div>
                     <div className="media-body">
-                        <div className="media-heading"></div>
+                        <div className="media-heading">{this.props.video.snippet.title}</div>
                     </div>
                 </div>
             </li>
